@@ -2,7 +2,21 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Redis_Logo.svg/1200px-Redis_Logo.svg.png" width= "400">
 </p>
 
-###  Instalación
+### Contenidos
+
+1. Introducción.
+2. Instalación
+3. Configuración 
+4. Fuentes
+
+
+### 1. Introducción 
+Redis (**R**emote **D**iccionary **S**erver), 
+
+
+es gestor de base de datos no relacional de código abierto, 
+
+###  2. Instalación
 
 Descargamos Redis desde su [página oficial.](https://redis.io/download) 
 
@@ -13,7 +27,6 @@ Instalamos la última versión estable de Redis desde repositorio redislabs/redi
     $ sudo add-apt-repository ppa:redislabs/redis
     $ sudo apt-get update 
     $ sudo ap-get install redis
-
 
 Luego de instalar, iniciamos Redis:
 
@@ -27,7 +40,7 @@ La respuesta en consola debería mostrar la dirección IP y el puerto en donde s
 
     127.0.0.1:6379> ping
     PONG
-    
+
 Si obtenemos respuesta de Redis, hemos comprobado que se ha instalado correctamente. Podemos hacer también una comprobación de escritura de texto:
 
     127.0.0.1:6379> set test "hola"
@@ -35,4 +48,16 @@ Si obtenemos respuesta de Redis, hemos comprobado que se ha instalado correctame
     127.0.0.1:6379> get test
     "hola"
 
+### 3. Configuración
 
+Luego de instalarse, Redis mantiene la configuración por defecto. Podemos modificar la configuración, con el siguiente comando: 
+
+    127.0.0.1:6379> config get *
+
+El comando anterior nos mostrará una lista de elementos, estas parejas de elementos se descomponen en dos posiciones, por ejemplo:
+
+    127.0.0.1:6379> config get dbfilename
+    1) "dbfilename"
+    2) "dump.rdb"
+
+Al elemento 
