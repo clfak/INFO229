@@ -1,8 +1,6 @@
 # PROGRAMACIÓN EN  GO
-
 ![enter image description here](https://whitesmith-website.s3.amazonaws.com/2016/May/gopher_head-1462551971634.png)
-### ¿Qué es go?
-***
+## ¿Qué es go?
 
 Go es un lenguaje de programación de código abierto que facilita la construcción de software de manera simple, segura y eficiente.
 
@@ -29,8 +27,6 @@ Verificamos que la instalación se haya realizado correctamente ejecutando el si
     $ go version
 
 ### Ejemplos en Go
----
-
 **Ejemplo 1:** ***Hello World***
 
 En un editor de texto de preferencia, creamos un archivo helloworld.go, y escribimos el siguiente código: 
@@ -40,13 +36,23 @@ En un editor de texto de preferencia, creamos un archivo helloworld.go, y escrib
     func main(){
 	    fmt.Println("Hello World")
     }
+Desglosando el código anterior: 
 
+ - Declarar un `main` package (en todos los archivos go  debemos declarar el paquete al que pertenecen usando la sentencia ***package***, esto es una forma de agrupar funciones).
+ - Importar el [packege fmt](https://golang.org/pkg/fmt/), el cual contiene funciones para el formato de texto, incluyendo la función `Println` que nos permite realizar una impresión en consola.
 
+Para ejecutar el código: 
 
+    go run helloworld.go
+
+ 
 
 #### Fuentes  y referencias:
 + https://medium.com/@golang_es/instalaci%C3%B3n-de-go-golang-6fd5d7b9eb48
 
+
+  
+  
 
   
   
