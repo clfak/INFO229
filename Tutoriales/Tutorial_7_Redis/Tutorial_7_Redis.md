@@ -8,7 +8,7 @@ Descargamos Redis desde su [página oficial.](https://redis.io/download)
 
 **Desde la PPA oficial de ubuntu**
 
-Instalamos la última versión estable de Redis desde repositorio redislabs/redis.
+Instalamos la última versión estable de Redis desde su repositorio redislabs/redis, añadimos el repositorio a la apt, acualizamos e instalamos: 
 
     $ sudo add-apt-repository ppa:redislabs/redis
     $ sudo apt-get update 
