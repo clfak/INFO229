@@ -1,5 +1,8 @@
 # PROGRAMACIÓN EN  GO
-![enter image description here](https://whitesmith-website.s3.amazonaws.com/2016/May/gopher_head-1462551971634.png)
+<p align="center">
+<img src = "img/gopher_head-1462551971634.png" width="400">
+</p>	
+
 ## ¿Qué es go?
 
 Go es un lenguaje de programación de código abierto que facilita la construcción de software de manera simple, segura y eficiente.
