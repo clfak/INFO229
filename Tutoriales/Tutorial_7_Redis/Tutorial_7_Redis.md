@@ -158,3 +158,31 @@ Para eliminar de la lista entradas con valor específico usamos el comando `lrem
     127.0.0.1:6379> lrange mylist 0 10
     1) "test"
     2) "bar"
+    
+    
+### 4.3 Sets
+
+Los *sets* son colecciones de *strings*, estas colecciones no siguen un orden particular, en los que se garantiza que los elementos del mismo son **únicos y no pueden estar duplicados**. Podemos añadir un mismo elemento más de una vez, pero Redis garantiza que sólo existirá una vez, lo que nos permite poder añadir elementos sin tener que preocuparnos previamente de si ya existen o no.
+Con el comando `sadd` se integran varios elementos en el *set*, esto si se introducen en el comando uno detrás de otro.
+
+    127.0.0.1:6379> sadd myset "foo"
+    (integer) 1
+    127.0.0.1:6379> sadd myset "bar"
+    (integer) 1
+
+Utilizamos `smembers` y el nombre del *set* para visualizarlo:
+
+    127.0.0.1:6379> smembers myset
+    1) "foo"
+    2) "bar"
+
+Para buscar una entrada concreta usamos `sismeber`, y `srem`para eliminar entradas sueltas:
+
+    127.0.0.1:6379> sismember myset "bar"
+    (integer) 1
+    127.0.0.1:6379>  srem myset "bar"
+    (integer) 1
+    127.0.0.1:6379> smembers myset
+    1) "foo"
+
+    
