@@ -5,13 +5,13 @@
 # Programación en Go
 	
 ### ¿Qué es go?
-
+***
 Go es un lenguaje de programación de código abierto que facilita la construcción de software de manera simple, segura y eficiente.
 
     agregar mas cosas acá 
 
 ### 1. Instalación 
-
+***
 Las distribuciones de Go están disponibles para Linux, macOS, Windows, podrá descargarlo en el siguiente [link](https://golang.org/dl/), también podrá encontrar las instrucciones de instalación [aquí](https://golang.org/doc/install).
 
 
@@ -31,6 +31,8 @@ Verificamos que la instalación se haya realizado correctamente ejecutando el si
     $ go version
 
 ### Ejemplos en Go
+***
+
 **Ejemplo 1:** ***Hello World***
 
 En un editor de texto de preferencia, creamos un archivo helloworld.go, y escribimos el siguiente código: 
