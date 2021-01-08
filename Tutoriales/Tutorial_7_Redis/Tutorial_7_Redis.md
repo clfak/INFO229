@@ -186,3 +186,48 @@ Para buscar una entrada concreta usamos `sismeber`, y `srem`para eliminar entrad
     1) "foo"
 
     
+### 4.4 Hashes 
+    
+Un hash permite asociar a una clave una colección de pares *key-value*, habitualmente usado para representar objetos. 
+Podemos usar por ejemplo `hset` para crea un *hash* con el nombre *user1* y tres campos. Con el comando `hget` solicitamos el valor de cada campo:
+
+    127.0.0.1:6379> hset user1 name "juan" email "juan@example.com" password "Rsx83_af"
+    (integer) 0
+    127.0.0.1:6379> hget user1 name
+    "juan"
+    
+Con `hgetall` mostramos todos los campos: 
+
+    127.0.0.1:6379> hgetall user1
+    1) "name"
+    2) "juan"
+    3) "email"
+    4) "juan@example.com"
+    5) "password"
+    6) "Rsx83_af"
+
+Para ver los valores(*values*) guardados en la tabla hash usamos el comando `hvals`, mientras que `hkeys` muestra las claves(*keys*) almacenadas en el hash:
+
+    127.0.0.1:6379> hvals user1
+    1) "juan"
+    2) "juan@example.com"
+    3) "Rsx83_af"
+    127.0.0.1:6379> hkeys user1
+    1) "name"
+    2) "email"
+    3) "password"
+
+Borramos valores sueltos con `hdel`, y con `del` borramos el hash completo:
+
+    127.0.0.1:6379> hdel user1 password
+    (integer) 1
+    127.0.0.1:6379> hgetall user1
+    1) "name"
+    2) "juan"
+    3) "email"
+    4) "juan@example.com"
+    127.0.0.1:6379> del user1
+    (integer) 1
+    127.0.0.1:6379> hgetall user1 
+    (empty array)
+
