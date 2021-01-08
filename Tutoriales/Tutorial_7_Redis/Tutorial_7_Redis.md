@@ -11,12 +11,14 @@
 
 
 ### 1. Introducción 
+***
 Redis (**R**emote **D**iccionary **S**erver), 
 
 
 es gestor de base de datos no relacional de código abierto, 
 
 ###  2. Instalación
+***
 
 Descargamos Redis desde su [página oficial.](https://redis.io/download) 
 
@@ -49,7 +51,7 @@ Si obtenemos respuesta de Redis, hemos comprobado que se ha instalado correctame
     "hola"
 
 ### 3. Configuración
-
+***
 Luego de instalarse, Redis mantiene la configuración por defecto. Podemos modificar la configuración, con el siguiente comando: 
 
     127.0.0.1:6379> config get *
@@ -83,4 +85,11 @@ También podemos programar la copia para que se realice de forma automática, po
 
     127.0.0.1:6379> save 60 10 
  
+La desventaja del comando `save` es que no se recomienda mientras el sistema esté en funcionamiento, pues impide que los clientes accedan a la base de datos. Para estos casos lo más recomendable es usar `bgsave`, que realiza el proceso en segundo plano.
+
+
+### 4. Creación de entradas
+***
+
+
 
