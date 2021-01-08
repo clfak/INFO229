@@ -7,7 +7,8 @@
 1. Introducción.
 2. Instalación
 3. Configuración 
-4. Fuentes
+4. Creación de entradas 
+5. Fuentes
 
 
 ### 1. Introducción 
