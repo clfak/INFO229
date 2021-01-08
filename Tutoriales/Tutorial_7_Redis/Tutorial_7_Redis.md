@@ -110,3 +110,51 @@ Con el comando `del` borramos las entradas:
     (integer) 1
     127.0.0.1:6379> get foo
     (nil)
+    
+También podemos crear varias entradas en una misma fila,  usando la función `mset`:
+
+    127.0.0.1:6379> mset foo1 "bar1" foo2 "bar2" foo3 "bar3"
+    OK
+
+Con `mget` solicitamos los valores de varios campos a la vez: 
+
+    127.0.0.1:6379> mget foo1 foo2 foo3
+    1) "bar1"
+    2) "bar2"
+    3) "bar3"
+
+
+### 4.2 Listas
+
+A diferencia de los ***sets*** que no tienen  un orden en particular, las ***listas*** están numeradas. En ellas podemos solicitar o borrar entradas.
+
+Por ejemplo, podemos añadir elementos a la lista con el comando `lpush`:
+
+    127.0.0.1:6379> lpush mylist foo 
+    (integer) 1
+    127.0.0.1:6379> lpush mylist bar
+    (integer) 2
+
+Con el comando `lrange`, indicamos que segmento de la lista debe mostrarse: 
+
+    127.0.0.1:6379> lrange mylist 0 10
+    1) "bar"
+    2) "foo"
+
+Usando `linsert`, añadimos un valor nuevo delante (*before*) de uno ya existente (también puede usarse *after*):
+
+    127.0.0.1:6379> linsert mylist before "bar" "test"
+    (integer) 3
+    127.0.0.1:6379> lrange mylist 0 10
+    1) "test"
+    2) "bar"
+    3) "foo"
+    127.0.0.1:6379> 
+
+Para eliminar de la lista entradas con valor específico usamos el comando `lrem`:
+
+    127.0.0.1:6379> lrem mylist 0 foo
+    (integer) 1
+    127.0.0.1:6379> lrange mylist 0 10
+    1) "test"
+    2) "bar"
