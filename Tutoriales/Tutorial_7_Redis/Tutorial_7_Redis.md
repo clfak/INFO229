@@ -60,4 +60,27 @@ El comando anterior nos mostrará una lista de elementos, estas parejas de eleme
     1) "dbfilename"
     2) "dump.rdb"
 
-Al elemento 
+Al elemento *dbfilename*  le corresponde el valor *dump.rdb*, la llave corresponde al primer elemento para el valor de configuración correspondiente.
+
+Podemos cambiar una entrada en el archivo de configuración usando el comando `set`. Por ejemplo, definimos una contraseña:
+
+    127.0.0.1:6379> config set requirepass "password"
+    OK
+
+Una vez realizado esto, si solicitamos la contraseña con el comando `get`, se nos pedirá una autentificación, usando el comando `auth`, consultamos la entrada en el archivo de configuración anterior:
+
+    127.0.0.1:6379> auth "password"
+    OK
+    127.0.0.1:6379> config get requirepass
+    1) "requirepass"
+    2) "password"
+
+Redis almacena todos los datos en memoria principal. Si tenemos esto en cuenta, para lograr la persistencia de los datos, podemos almacenar una copia de la base de datos en el disco duro, que se ubicará en el archivo *dump.rdb*. Se puede crear una copia manualmente con el comando `save`.
+
+    127.0.0.1:6379> save
+
+También podemos programar la copia para que se realice de forma automática, por ejemplo, podemos asignarle dos parámetros, para que se cree una copia cada 60 segundos si ya se han producido 10 cambios en ese periodo de tiempo.
+
+    127.0.0.1:6379> save 60 10 
+ 
+
