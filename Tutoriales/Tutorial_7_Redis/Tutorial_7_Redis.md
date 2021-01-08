@@ -232,3 +232,81 @@ Borramos valores sueltos con `hdel`, y con `del` borramos el hash completo:
     (empty array)
 
 **NOTA** : con `flushall` se borran todas las entradas de la base de datos.
+
+
+
+ ### 5 Alternativas 
+ ***
+ Con Redis además de crear entradas en una base de datos, podemos asignar propiedades a los datos. 
+ Por ejemplo, podemos implementar los comando de incremento(`incr`) y decremento(`decr`):
+ 
+
+    127.0.0.1:6379> set foo 1
+    OK
+    127.0.0.1:6379> get foo
+    "1"
+    127.0.0.1:6379> incr foo
+    (integer) 2
+    127.0.0.1:6379> incr foo
+    (integer) 3
+    127.0.0.1:6379> get foo
+    "3"
+    127.0.0.1:6379> decr foo
+    (integer) 2
+    127.0.0.1:6379> get foo
+    "2"
+   
+   Las funciones anteriores pueden ser útiles para reducir o incrementar valores en una unidad.
+
+Si se quiere introducir valores en la base de datos que solo permanezcan un cierto tiempo en ella, podemos usar la  función `expire`, este comando necesita una indicación de tiempo ( en segundos), con `ttl` (*time to live*) mostramos el tiempo restante de la entrada, cuando el tiempo es negativo la entrada ya ha desaparecido.  
+
+    127.0.0.1:6379> set foo "bar"
+    OK
+    127.0.0.1:6379> expire foo 40
+    (integer) 1
+    127.0.0.1:6379> ttl foo
+    (integer) 33
+    127.0.0.1:6379> ttl foo
+    (integer) 19
+    127.0.0.1:6379> ttl foo
+    (integer) 3
+    127.0.0.1:6379> ttl foo
+    (integer) -2
+    127.0.0.1:6379> get foo
+    (nil)
+
+Con `setex` podemos asignar un TTL a una entrada de la base de datos desde su creación.
+
+    127.0.0.1:6379> setex foo 40 "bar"
+    OK
+
+Una vez se ha creado la entrada, usando el comando `append` ampliamos la entrada añadiendo otro valor al ya existente. Si la entrada no existe, `append`  realiza la misma acción  que la función `set`:
+
+    127.0.0.1:6379> set foo "hello"
+    OK
+    127.0.0.1:6379> append foo " word"
+    (integer) 10
+    127.0.0.1:6379> get foo
+    "hello word"
+    127.0.0.1:6379> set bar 5
+    OK
+    127.0.0.1:6379> append bar 10
+    (integer) 3
+    127.0.0.1:6379> get bar
+    "510"
+
+
+También podemos renombrar las entradas usando el comando `rename`:
+
+    127.0.0.1:6379> set foo 4
+    OK
+    127.0.0.1:6379> rename foo bar
+    OK
+    127.0.0.1:6379> get foo
+    (nil)
+    127.0.0.1:6379> get bar
+    "4"
+
+
+
+
