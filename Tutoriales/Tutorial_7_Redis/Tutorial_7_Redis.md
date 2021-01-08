@@ -231,3 +231,4 @@ Borramos valores sueltos con `hdel`, y con `del` borramos el hash completo:
     127.0.0.1:6379> hgetall user1 
     (empty array)
 
+**NOTA** : con `flushall` se borran todas las entradas de la base de datos.
