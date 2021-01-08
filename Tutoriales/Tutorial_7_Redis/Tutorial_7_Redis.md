@@ -91,6 +91,22 @@ La desventaja del comando `save` es que no se recomienda mientras el sistema est
 
 ### 4. Creación de entradas
 ***
+ **Strings:** para la creación de cadenas de caracteres, usamos el comando `set`:
 
+    127.0.0.1:6397> set foo "bar"
+    127.0.0.1:6397> set value 1
+    
+  Solicitamos las entradas *foo* y *value* mediante el comando `get`:
+  
 
+    127.0.0.1:6379> get foo
+    "bar"
+    127.0.0.1:6379> get value
+    "1"
 
+Con el comando `del` borramos las entradas:
+
+    127.0.0.1:6379> del foo
+    (integer) 1
+    127.0.0.1:6379> get foo
+    (nil)
