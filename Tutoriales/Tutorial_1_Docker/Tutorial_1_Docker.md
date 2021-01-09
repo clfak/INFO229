@@ -486,6 +486,7 @@ una vez conectado a Redis:
 
 ## 6. Preguntas
 
+
 Algunas preguntas para autoevaluar su comprensión del tutorial:
 
 1. ¿Cuál es la diferencia entre una Imágen Docker y un Contenedor Docker?
