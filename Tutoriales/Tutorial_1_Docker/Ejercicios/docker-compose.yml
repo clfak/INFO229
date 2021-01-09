@@ -1,0 +1,19 @@
+version: '3.6'  
+services:  
+  donbot:
+    build:
+      context: ./donbot
+    container_name: donbot_slackconnector
+    environment:
+      - MONGO_HOST=database
+    depends_on:
+      - database
+  database:
+    image: mongo
+    container_name: donbot_mongo
+    environment:
+      - MONGO_INITDB_DATABASE=donbot
+    volumes:
+      - ./mongodata:/data/db
+    ports:
+      - '27017-27019:27017-27019'
