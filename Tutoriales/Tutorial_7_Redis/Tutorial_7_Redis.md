@@ -2,9 +2,13 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Redis_Logo.svg/1200px-Redis_Logo.svg.png" width= "400">
 </p>
 
+
+# Tutorial # 7: Redis
+Este tutorial es una introducción a *redis*, y está inspirado en [redis-tutorial-paso-a-paso](https://www.ionos.es/digitalguide/hosting/cuestiones-tecnicas/redis-tutorial-paso-a-paso/) de ionos.es, además de la documentación oficial de [redis](https://redis.io/documentation).
+
 ### Contenidos
 
-1. Introducción.
+1. Introducción
 2. Instalación
 3. Configuración 
 4. Creación de entradas 
