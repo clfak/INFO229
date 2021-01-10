@@ -1,0 +1,51 @@
+version: '3.6'  
+services:
+  rabbitmq:
+   image: rabbitmq:3-management
+   ports:
+      # The standard AMQP protocol port
+      - '5672:5672'
+      # HTTP management UI
+      - '15672:15672'
+   networks:
+      - network
+   container_name: rabbitmq
+   restart: 'always'
+
+  donbot_wikipedia_search:
+   build:
+      context: ./donbot_wikipedia_search
+   container_name: donbot_wikipedia_search
+   networks:
+      - network
+   environment:
+      - RABBITMQ_HOST=rabbitmq
+   depends_on:
+      - rabbitmq
+  
+  donbot_slack_reader:
+   build:
+     context: ./donbot_slack_reader
+   container_name: donbot_slack_reader
+   ports:
+      - 80:80
+   environment:
+      - RABBITMQ_HOST=rabbitmq
+   depends_on:
+      - rabbitmq   
+   networks:
+      - network
+
+  donbot_slack_writer:
+   build:
+     context: ./donbot_slack_writer
+   container_name: donbot_slack_writer
+   environment:
+      - RABBITMQ_HOST=rabbitmq
+   depends_on:
+      - rabbitmq   
+   networks:
+      - network
+
+networks:
+  network: {}
