@@ -30,7 +30,6 @@ Este tutorial es introductorio  a *redis*, y está inspirado en [redis-tutorial-
 
 5. **Otras funciones**
 
-6. **Conclusiones**
 
 
 ### 1. Introducción 
