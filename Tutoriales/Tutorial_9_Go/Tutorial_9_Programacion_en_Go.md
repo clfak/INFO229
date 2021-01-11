@@ -8,8 +8,6 @@
 ***
 Go es un lenguaje de programación de código abierto que facilita la construcción de software de manera simple, segura y eficiente.
 
-    agregar mas cosas acá 
-
 ### 1. Instalación 
 ***
 Las distribuciones de Go están disponibles para Linux, macOS, Windows, podrá descargarlo en el siguiente [link](https://golang.org/dl/), también podrá encontrar las instrucciones de instalación [aquí](https://golang.org/doc/install).
