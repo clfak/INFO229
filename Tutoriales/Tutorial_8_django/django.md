@@ -113,7 +113,7 @@ Con esto ya tenemos el servidor funcionando, podemos comprobarlo visitando la di
 
 
 <p align="center">
-<img src = "img/img1.png" width="600">
+<img src = "img/img1.png" width="800">
 </p>
 
 
