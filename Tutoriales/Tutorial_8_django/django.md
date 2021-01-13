@@ -1,5 +1,5 @@
 <p align="center">
-<img src = "img/cover.jpeg" width="400">
+<img src = "img/django.png" width="400">
 </p>
 
 
