@@ -108,7 +108,7 @@ Ejecutando  el siguiente comando iniciamos el servidor de desarrollo:
 
 `$ python manage.py runserver`
 
-Con esto ya tenemos el servidor funcionando, podemos comprobarlo visitando la dirección `http://127.0.0.1:8000/` y debería mostrar lo siguiente: 
+Con esto ya tenemos el servidor funcionando, podemos comprobarlo visitando la dirección `http://127.0.0.1:8000/` en nuestro navegador y debería mostrar lo siguiente: 
 
 
 
