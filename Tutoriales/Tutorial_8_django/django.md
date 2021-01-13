@@ -12,8 +12,9 @@
 2. ¿Por qué usar Django?
 3. Instalación 
 4. Creación de proyectos
+5. Servidor de desarrollo
 
-4. Referencias
+6. Referencias
 
 
 
@@ -31,7 +32,6 @@ Con *django* podemos construir buenas aplicaciones en poco tiempo, especialmente
 Django implementa de por si algunas medidas de seguridad, como por ejemplo, para que no haya SQL Injectionm, Cross site request forgery(CSRF) o no Clickjacking por JavaScript.
 
 * **Escalabilidad:**
-
 Este framework nos permite pasar desde un aplicación pequeña a aplicación enorme que sea modular y que funcione rápido y que además sea estable.
 
 * **Versatilidad** 
@@ -85,6 +85,23 @@ proyecto1/
 
 ````````
 
+* **proyecto1:** El directorio raíz externo **proyecto1/** solo es un contenedor de nuestro proyecto(El nombre no es relevante para Django).
+
+* **manage.py:**  Una utilidad de la línea de comandos que le permite interactuar con este proyecto *Django* de diferentes formas.
+
+* **proyecto1/__init__.py:** archivo vacío que le indica a *Python* que este directorio debería ser considerado como un paquete *Python*.
+
+* **proyecto1/settings.py:** Ajustes/configuración para este proyecto Django (para más información ver [Django Settings](https://docs.djangoproject.com/es/3.1/topics/settings/)).
+
+
+* **proyecto1/urls.py:** declaraciones URL para este proyecto *Django*; una «tabla de contenidos» nuestro sitio basado en *Django* (más información [URL dispatcher](https://docs.djangoproject.com/es/3.1/topics/http/urls/)).
+
+* **proyecto1/asgi.py:** punto de entrada para servidores web compatibles con ASGI.
+
+* **proyecto1/wsgi.py**: Un punto de entrada para que los servidores web compatibles con WSGI.
+
+**** 
+### Servidor de desarrollo
 ***
 ### Referencias: 
 
