@@ -102,6 +102,22 @@ proyecto1/
 
 **** 
 ### Servidor de desarrollo
+Django viene con un servidor ligero(escrito en *python*) para realizar pruebas, no es recomendado usarlo para proyectos grandes pues no admite peticiones simultaneas, y cargas de trabajo pesadas.
+
+Ejecutando  el siguiente comando iniciamos el servidor de desarrollo:
+
+`$ python manage.py runserver`
+
+Con esto ya tenemos el servidor funcionando, podemos comprobarlo visitando la dirección `http://127.0.0.1:8000/` y debería mostrar lo siguiente: 
+
+
+
+<p align="center">
+<img src = "img/<img1.png" width="600">
+</p>
+
+
+
 ***
 ### Referencias: 
 
